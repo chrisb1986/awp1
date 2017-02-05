@@ -20,16 +20,25 @@
 
       <h3>Add a New Note</h3>
         <form method="POST" action="/cards/{{ $card->id }}/notes">
-          <input type="hidden" name="user_id" value="1">
-
+          {{ csrf_field() }}
+          <!-- <input type="hidden" name="user_id" value="1"> -->
           <div class="form-group">
-            <textarea name="body" class="form-control"></textarea>
+            <textarea name="body" class="form-control">{{ old('body') }}</textarea>
           </div> <!-- End form-group div class. -->
 
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Add Note</button>
           </div> <!-- End form-group class. -->
         </form>
+
+        @if (count($errors))
+          <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        @endif
+        <!-- {{ var_dump($errors) }} -->
     </div> <!-- End col-md-6 col-md-offset-3 class. -->
   </div> <!-- End row class. -->
 @stop

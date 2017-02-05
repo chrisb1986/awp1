@@ -26,13 +26,22 @@ class NotesController extends Controller
       // ]);
 
       // Method 4 - simplest method!
-      $card->notes()->create($request->all());
+      // $card->notes()->create($request->all());
 
       // Method 5 - uses public function from Card.php.
       // $card->addNote(
       //   new Note($request->all())
       // );
-      
+
+      // Method 5 with validation.
+      $this->validate($request, [
+        'body' => 'required|min:10'        
+      ]);
+      $note = new Note($request->all());
+      // $note->by(Auth::user());
+      // $note->user_id = 1;
+      $card->addNote($note, 1);
+
       return back();
     }
 
