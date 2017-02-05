@@ -1,4 +1,4 @@
-<!-- Index page. -->
+ <!-- Index page. -->
 @extends('layout')
 
 @section('header')
