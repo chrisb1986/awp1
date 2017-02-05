@@ -21,5 +21,8 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('cards', 'CardsController@index');
   Route::get('cards/{card}', 'CardsController@show');
 
+  // Notes.
+  Route::post('cards/{card}/notes', 'NotesController@store');
+
   Auth::routes();
 });
