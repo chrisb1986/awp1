@@ -5,13 +5,11 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h1>{{ $card->title }}</h1>
-      <p>Click Each Note to Edit.</p>
-
       <ul class="list-group">
         @foreach ($card->notes as $note)
           <a href="/notes/{{ $note->id }}/edit"> <!-- Displays the note and note body is edit link. -->
             <li class="list-group-item">{{ $note->body }}
-              <a href="#" style="float:right">{{ $note->user->name }}</a> <!-- Displays user who inputted the note. -->
+              <a href="#" class="pull-right">{{ $note->user->name }}</a> <!-- Displays user who inputted the note. -->
             </li>
           </a>
         @endforeach
@@ -30,15 +28,15 @@
             <button type="submit" class="btn btn-primary">Add Note</button>
           </div> <!-- End form-group class. -->
         </form>
-
+        <a href="/cards/">Go back to All Cards.</a>
         @if (count($errors))
-          <ul>
+          <ul class="errors">
             @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
             @endforeach
           </ul>
         @endif
         <!-- {{ var_dump($errors) }} -->
-    </div> <!-- End col-md-6 col-md-offset-3 class. -->
-  </div> <!-- End row class. -->
+      </div> <!-- End col-md-6 col-md-offset-3. -->
+    </div> <!-- End row. -->
 @stop

@@ -25,7 +25,7 @@ class NotesController extends Controller
       //   'body' => $request->body
       // ]);
 
-      // Method 4 - simplest method!
+      // Method 4.
       // $card->notes()->create($request->all());
 
       // Method 5 - uses public function from Card.php.
@@ -35,7 +35,7 @@ class NotesController extends Controller
 
       // Method 5 with validation.
       $this->validate($request, [
-        'body' => 'required|min:10'        
+        'body' => 'required|min:2'
       ]);
       $note = new Note($request->all());
       // $note->by(Auth::user());
@@ -52,6 +52,9 @@ class NotesController extends Controller
 
     public function update(Request $request, note $note, card $card)
     {
+      $this->validate($request, [
+        'body' => 'required|min:2'
+      ]);
       $note->update($request->all());
       // return back();
       return redirect('/cards/'.$note->card()->first()->id);
