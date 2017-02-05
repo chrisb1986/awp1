@@ -25,14 +25,26 @@ class NotesController extends Controller
       //   'body' => $request->body
       // ]);
 
-      // Method 4 - simplest, cleanest method.
-      // $card->notes()->create($request->all());
+      // Method 4 - simplest method!
+      $card->notes()->create($request->all());
 
       // Method 5 - uses public function from Card.php.
-      $card->addNote(
-        new Note($request->all())
-      );
+      // $card->addNote(
+      //   new Note($request->all())
+      // );
       
       return back();
+    }
+
+    public function edit(note $note)
+    {
+      return view('notes.edit', compact('note'));
+    }
+
+    public function update(Request $request, note $note, card $card)
+    {
+      $note->update($request->all());
+      // return back();
+      return redirect('/cards/'.$note->card()->first()->id);
     }
 }

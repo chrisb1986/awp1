@@ -4,15 +4,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-/* OVERIDES */
-.errors {
-  border: thin solid red;
-  background: pink;
-  font-weight: bold;
-  list-style-type: none;
-  padding: 20px;
-}
-
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -20,7 +11,6 @@ html {
 }
 body {
   margin: 0;
-  background-color: lightgrey!important;
 }
 article,
 aside,

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
         <!-- <link rel="stylesheet" href="/css/styles.css"> -->
-        <link rel="stylesheet" href="/css/bootstrap-3.3.7-dist/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
         @yield('header')
     </head>
     <body>
@@ -29,6 +29,7 @@
                 </div>
             </div>
         </div>
+
           @yield('content')
 
           @yield('footer')
