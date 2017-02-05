@@ -1,3 +1,4 @@
+<!-- Routes -->
 <?php
 
 /*
@@ -11,6 +12,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['web']], function () {
+
+  // Route::get('/', 'PagesController@home');
+  // Route::get('about', 'PagesController@about');
+  // Route::get('/home', 'HomeController@index');
+  // Cards.
+  Route::get('cards', 'CardsController@index');
+
+  Auth::routes();
 });
