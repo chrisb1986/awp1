@@ -41,7 +41,6 @@ class NotesController extends Controller
       // $note->by(Auth::user());
       // $note->user_id = 1;
       $card->addNote($note, 1);
-
       return back();
     }
 

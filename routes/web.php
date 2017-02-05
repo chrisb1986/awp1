@@ -14,9 +14,9 @@
 
 Route::group(['middleware' => ['web']], function () {
 
-  Route::get('/', 'PagesController@home');
-  Route::get('about', 'PagesController@about');
-  Route::get('/home', 'HomeController@index');
+  // Route::get('/', 'PagesController@home');
+  // Route::get('about', 'PagesController@about');
+  // Route::get('/home', 'HomeController@index');
   // Cards.
   Route::get('cards', 'CardsController@index');
   Route::get('cards/{card}', 'CardsController@show');
